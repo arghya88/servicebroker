@@ -549,7 +549,7 @@ Sample response:
 
 When a broker returns status code `202 Accepted` for [Provision](#provisioning), [Update](#updating-a-service-instance), or [Deprovision](#deprovisioning), the platform will begin polling the `/v2/service_instances/:instance_id/last_operation` endpoint to obtain the state of the last requested operation. The broker response MUST contain the field `state` and MAY contain the field `description`.
 
-Valid values for `state` are `in progress`, `succeeded`, and `failed`. The platform will poll the `last_operation` endpoint as long as the broker returns `"state": "in progress"`. Returning `"state": "succeeded"` or `"state": "failed"` will cause the platform to cease polling. The value provided for `description` will be passed through to the platform API client and can be used to provide additional detail for users about the progress of the operation.
+Valid values for `state` are `in progress`, `succeeded`, and `failed`. The platform marketplace will poll the `last_operation` endpoint as long as the broker returns `"state": "in progress"`. Returning `"state": "succeeded"` or `"state": "failed"` will cause the platform to cease polling. The value provided for `description` will be passed through to the platform API client and can be used to provide additional detail for users about the progress of the operation.
 
 ### Request
 
